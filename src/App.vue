@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <TaskList />
 </template>
 
 <script lang="ts">
@@ -15,7 +15,7 @@ import TaskItem from '@/types/TaskItem'
 export default defineComponent({
   name: 'App',
   components: {
-    HelloWorld
+    TaskList
   }
 });
 </script>
