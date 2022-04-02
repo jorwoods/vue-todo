@@ -5,7 +5,12 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+
+import TaskList from '@/components/TaskList.vue'
+import TaskDetail from '@/components/TaskIDetail.vue'
+
+import TaskItem from '@/types/TaskItem'
+
 
 export default defineComponent({
   name: 'App',
