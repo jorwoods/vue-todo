@@ -10,25 +10,33 @@
 </template>
 
 <script lang="ts">
-import { PropType, computed } from "vue"
+import { PropType, defineComponent, computed } from "vue"
 import TaskItem from '@/types/TaskItem'
 
-export default {
+export default defineComponent ({
   props: {
     tasks: {
       required: true,
       type: Array as PropType<TaskItem[]>,
     },
   },
-  setup() {
+  setup(props) {
 
     const today = new Date()
 
     return  { today }
   },
-}
+})
 </script>
 
-<style>
-
+<style scoped>
+div.task-list{
+  border: gray;
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 4px;
+}
+li{
+  list-style-type: none;
+}
 </style>

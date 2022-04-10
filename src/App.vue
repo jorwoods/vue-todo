@@ -7,6 +7,7 @@
 import { defineComponent, ref } from 'vue';
 
 import TaskList from '@/components/TaskList.vue'
+import loadTasks from "@/func/getTasks"
 // import TaskDetail from '@/components/TaskIDetail.vue'
 
 import TaskItem from '@/types/TaskItem'
@@ -19,23 +20,11 @@ export default defineComponent({
   },
   setup() {
 
-    let start = new Date('2022-04-01')
-    let due = new Date('2022-05-31')
+    const { tasks, error, load } = loadTasks()
 
-    const tasks = ref<TaskItem[]>([
-      {
-        id: "0",
-        subject: "Build todo",
-        description: "Build todo app in Vue",
-        stakeholders: ["yourself"],
-        startDate: start,
-        dueDate: due,
-        endDate: null,
-        tags: ["vue"],
-      }
-    ])
+    load()
 
-    return { tasks }
+    return { tasks, error }
   },
 });
 </script>
