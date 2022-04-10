@@ -2,8 +2,7 @@
   <div class=task-list>
     <ul>
       <li v-for="task in tasks" :key="task.id">
-        <h3>{{ task.subject }}</h3>
-        <p></p>
+        <SingleTaskSummary :task="task" />
       </li>
     </ul>
   </div>
@@ -12,6 +11,7 @@
 <script lang="ts">
 import { PropType, defineComponent, computed } from "vue"
 import TaskItem from '@/types/TaskItem'
+import SingleTaskSummary from '@/components/SingleTaskSummary.vue'
 
 export default defineComponent ({
   props: {
@@ -20,6 +20,7 @@ export default defineComponent ({
       type: Array as PropType<TaskItem[]>,
     },
   },
+  components: { SingleTaskSummary },
   setup(props) {
 
     const today = new Date()
@@ -31,12 +32,10 @@ export default defineComponent ({
 
 <style scoped>
 div.task-list{
-  border: gray;
-  padding: 16px;
-  margin: 16px 0;
-  border-radius: 4px;
+  text-align: center;
 }
 li{
-  list-style-type: none;
+  list-style: none;
 }
+
 </style>
