@@ -2,10 +2,10 @@ type TaskItem = {
   id: string,
   subject: string,
   description: string,
-  customer: string,
+  stakeholders: string[],
   startDate: Date,
   dueDate: Date,
-  endDate: Date,
+  endDate: Date | null,
   tags: string[],
 }
 
